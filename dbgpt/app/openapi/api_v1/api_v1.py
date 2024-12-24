@@ -690,6 +690,10 @@ async def stream_generator(chat, incremental: bool, model_name: str):
                 # TODO generate an openai-compatible streaming responses
                 msg = msg.replace("\n", "\\n")
                 msg = msg.replace("```", "")
+
+                # 输出格式化
+                msg = msg.replace('json ','')
+                # msg = msg.replace('"thought"','')
                 yield f"data:{msg}\n\n"
             previous_response = msg
             await asyncio.sleep(0.02)
