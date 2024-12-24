@@ -77,7 +77,7 @@ RESPONSE_FORMAT_SIMPLE = {
 }
 
 
-PROMPT_NEED_STREAM_OUT = False
+PROMPT_NEED_STREAM_OUT = True
 
 # Temperature is a configuration hyperparameter that controls the randomness of language model output.
 # A high temperature produces more unpredictable and creative results, while a low temperature produces more common and conservative output.

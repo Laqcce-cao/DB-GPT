@@ -669,7 +669,11 @@ async def stream_generator(chat, incremental: bool, model_name: str):
 
     stream_id = f"chatcmpl-{str(uuid.uuid1())}"
     previous_response = ""
-    async for chunk in chat.stream_call():
+
+    # 流式输出
+    # async for chunk in chat.stream_call():
+
+    async for chunk in chat.stream_call_db():
         if chunk:
             msg = chunk.replace("\ufffd", "")
             if incremental:
@@ -685,6 +689,7 @@ async def stream_generator(chat, incremental: bool, model_name: str):
             else:
                 # TODO generate an openai-compatible streaming responses
                 msg = msg.replace("\n", "\\n")
+                msg = msg.replace("```", "")
                 yield f"data:{msg}\n\n"
             previous_response = msg
             await asyncio.sleep(0.02)

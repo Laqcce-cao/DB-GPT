@@ -81,7 +81,7 @@ class ChatWithDbAutoExecute(BaseChat):
 
     def stream_plugin_call(self, text):
         text = text.replace("\n", " ")
-        print(f"stream_plugin_call:{text}")
+        # print(f"stream_plugin_call:{text}")
         return self.api_call.display_sql_llmvis(text, self.database.run_to_df)
 
     def do_action(self, prompt_response):
