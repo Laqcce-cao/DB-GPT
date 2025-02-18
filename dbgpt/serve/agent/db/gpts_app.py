@@ -1055,35 +1055,44 @@ class GptsAppDao(BaseDao):
         """
         chat_normal_ctx = NativeTeamContext(
             chat_scene="chat_normal",
-            scene_name="Chat Normal",
-            scene_describe="Native LLM dialogue",
+            # 界面修改
+            # scene_name="Chat Normal",
+            # scene_describe="Native LLM dialogue",
+            scene_name="DeepSeek R1本地版",
+            scene_describe="与大模型交流",
             param_title="",
             show_disable=False,
         )
         chat_knowledge_ctx = NativeTeamContext(
             chat_scene="chat_knowledge",
-            scene_name="Chat Knowledge",
-            scene_describe="Private knowledge base Q&A",
+            # 修改界面
+            # scene_name="Chat Knowledge",
+            # scene_describe="Private knowledge base Q&A",
+            scene_name="企业知识库问答",
+            scene_describe="企业内部知识问答",
             param_title="",
             show_disable=False,
         )
         chat_with_db_qa_ctx = NativeTeamContext(
             chat_scene="chat_with_db_qa",
-            scene_name="Chat DB",
+            scene_name="数据库结构问答",
             scene_describe="Database Metadata Q&A",
             param_title="",
             show_disable=False,
         )
         chat_with_db_execute_ctx = NativeTeamContext(
             chat_scene="chat_with_db_execute",
-            scene_name="Chat Data",
-            scene_describe="Have a conversation with your private data through natural language",
+            # 界面修改
+            # scene_name="Chat Data",
+            # scene_describe="Have a conversation with your private data through natural language",
+            scene_name="生成式数据分析",
+            scene_describe="通过自然语言与企业内部数据对话和分析",
             param_title="",
             show_disable=False,
         )
         chat_dashboard_ctx = NativeTeamContext(
             chat_scene="chat_dashboard",
-            scene_name="Chat Dashboard",
+            scene_name="生成式数据看板",
             scene_describe="Provide you with professional data analysis reports through natural language",
             param_title="",
             show_disable=False,
