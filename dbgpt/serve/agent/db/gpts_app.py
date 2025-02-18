@@ -1411,6 +1411,7 @@ def parse_select_param(chat_scene: str, bind_value: str):
             return bind_value
 
 
+
 class AppParamType(Enum):
     Resource = "resource"
     Model = "model"
